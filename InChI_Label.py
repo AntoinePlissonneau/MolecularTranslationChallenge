@@ -14,7 +14,7 @@ tqdm.pandas()
 # ====================================================
 df = pd.read_csv(r"F://bms-molecular-translation//train_labels.csv").copy()
 
-atom = {'B': 0, 'Br': 1, 'C': 2, 'Cl': 3, 'D': 4, 'F': 5, 'H': 6, 'I': 7, 'N': 8, 'O': 9, 'P': 10, 'S': 11, 'Si': 12, 'T':13}
+atom = {'B': 0, 'Br': 1, 'C': 2, 'Cl': 3, 'F': 4, 'H': 5, 'I': 6, 'N': 7, 'O': 8, 'P': 9, 'S': 10, 'Si': 11}
 
 # ====================================================
 # Preprocess functions
@@ -38,6 +38,9 @@ def get_train_file_path(image_id):
     return "F:/bms-molecular-translation/train/{}/{}/{}/{}.png".format(
         image_id[0], image_id[1], image_id[2], image_id)
 
+def f(x):
+    return np.array(x.split('/')).astype(float)
+
 # ====================================================
 # main
 # ====================================================
@@ -49,6 +52,11 @@ def main():
     df['NbAt'] = df['Ft'].progress_apply(split_InChI)
     df['file_path'] = df['image_id'].progress_apply(get_train_file_path)
     df.to_pickle("F://bms-molecular-translation//train_labels_p.pkl")
+    sys.stderr.write('Data saved')
+    
+    m = np.array(list(map(f,df.NbAt.values)))
+    data  = pd.DataFrame(m,columns=atom.keys())
+    data.to_pickle("F://bms-molecular-translation//train_natom.pkl")
     sys.stderr.write('Data saved')
 
 if __name__ == '__main__':
