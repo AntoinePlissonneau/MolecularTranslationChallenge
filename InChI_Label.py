@@ -34,6 +34,10 @@ def split_InChI(s):
             pass
     return "/".join(l)
 
+def get_train_file_path(image_id):
+    return "F:/bms-molecular-translation/train/{}/{}/{}/{}.png".format(
+        image_id[0], image_id[1], image_id[2], image_id)
+
 # ====================================================
 # main
 # ====================================================
@@ -43,7 +47,8 @@ def main():
     # ====================================================
     df['Ft'] = df['InChI'].progress_apply(lambda x: x.split('/')[1])
     df['NbAt'] = df['Ft'].progress_apply(split_InChI)
-    df.to_csv("F://bms-molecular-translation//train_labels_p.csv",index=False)
+    df['file_path'] = df['image_id'].progress_apply(get_train_file_path)
+    df.to_pickle("F://bms-molecular-translation//train_labels_p.pkl")
     sys.stderr.write('Data saved')
 
 if __name__ == '__main__':
