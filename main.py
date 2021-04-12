@@ -9,10 +9,10 @@ sys.path.append('F://bms-molecular-translation')
 import Levenshtein
 from sklearn.model_selection import train_test_split
 
-from preprocess import *
+from preprocess_InChI import *
 import models_InChI
-from Trainer import *
-from utils import *
+from Trainer_InChI import *
+from utils_InChI import *
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     # Train Data
     train = pd.read_pickle(r"F://bms-molecular-translation//train_natom.pkl")
-    debug=True
+    debug=False
 
     # Random seed
     seed_torch(seed=42)
@@ -35,7 +35,9 @@ if __name__ == '__main__':
         train , val = train_test_split(train, random_state=42)
 
     else:
-        train, val = train_test_split(train, random_state=42).reset_index(drop=True)
+        train, val = train_test_split(train, random_state=42)
+        train.reset_index(drop=True)
+        val.reset_index(drop=True)
 
     # Dataset
     train_dataset = TrainDataset(train,transform=get_transforms(data='train'))
