@@ -29,7 +29,7 @@ class DLChI(nn.Module):
         """
         Forward propagation.
         :param images: images, a tensor of dimensions (batch_size, 3, image_size, image_size)
-        :return: encoded images
+        :return: tensor with dim (nb atoms)
         """
         out = self.resnet(images)  # (batch_size, 2048, image_size/32, image_size/32)
         out = self.adaptive_pool(out)  # (batch_size, 2048, encoded_image_size, encoded_image_size)
