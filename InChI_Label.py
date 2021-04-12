@@ -6,6 +6,8 @@ import re
 import numpy as np
 import pandas as pd
 import sys
+sys.path.append('F://bms-molecular-translation')
+from utils import save_obj
 from tqdm.auto import tqdm
 tqdm.pandas()
 
@@ -15,6 +17,9 @@ tqdm.pandas()
 df = pd.read_csv(r"F://bms-molecular-translation//train_labels.csv").copy()
 
 atom = {'B': 0, 'Br': 1, 'C': 2, 'Cl': 3, 'F': 4, 'H': 5, 'I': 6, 'N': 7, 'O': 8, 'P': 9, 'S': 10, 'Si': 11}
+
+# Save to decode sequence from model
+save_obj(atom, 'atom')
 
 # ====================================================
 # Preprocess functions
