@@ -67,7 +67,7 @@ def process_img(in_path=None, out_path=None, n=7, diff=False, mode="save"):
         
     if mode == "show":
         cv2.imshow(f"Denoizer n={n}", img2)
-
+    return img2
 
 def process_imgs(folder_path=None, out_folder_path=None, n=7, diff = False):
     """
