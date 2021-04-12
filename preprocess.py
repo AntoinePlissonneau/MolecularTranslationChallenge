@@ -24,7 +24,7 @@ from configparser import ConfigParser
 # preprocessing.ini
 # ====================================================
 config = ConfigParser()
-config.read('F://bms-molecular-translation//preprocessing.ini')
+config.read('F://bms-molecular-translation//ini//preprocessing.ini')
 size = int(config['Preprocessing_parameters']['size_image'])
 
 # ====================================================
