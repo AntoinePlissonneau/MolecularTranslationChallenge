@@ -45,13 +45,11 @@ if __name__ == '__main__':
 
     train_loader = DataLoader(train_dataset,
                               batch_size=32,
-                              shuffle=True,
-                              pin_memory=True)
+                              shuffle=True)
 
     val_loader = DataLoader(val_dataset,
                             batch_size=32,
-                            shuffle=True,
-                            pin_memory=True)
+                            shuffle=True)
 
     config = ConfigParser()
     config.read('F://bms-molecular-translation//ini//params.ini')
