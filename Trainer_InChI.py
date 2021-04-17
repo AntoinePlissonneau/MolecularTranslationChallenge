@@ -220,7 +220,7 @@ class Trainer:
             # Forward prop.
             scores = self.model(imgs)
 
-        return mol_fb(scores.squeeze(), atom)
+        return mol_fb(scores.squeeze().cpu(), atom)
 
     def predict_batch(self, image):
 
