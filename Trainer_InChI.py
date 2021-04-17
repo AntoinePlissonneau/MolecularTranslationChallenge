@@ -127,8 +127,8 @@ class Trainer:
             data_time.update(time.time() - start)
 
             # Move to GPU, if available
-            images = images.to(device)
-            labels = labels.to(device)
+            images = images.to(device, non_blocking=True)
+            labels = labels.to(device, non_blocking=True)
 
             # Gradient zero.
             self.model_optimizer.zero_grad()
@@ -183,8 +183,8 @@ class Trainer:
             for i, (imgs, labs) in enumerate(val_loader):
 
                 # Move to device, if available
-                imgs = imgs.to(device)
-                labs = labs.to(device)
+                imgs = imgs.to(device, non_blocking=True)
+                labs = labs.to(device, non_blocking=True)
 
                 # Forward prop.
                 scores = self.model(imgs)
