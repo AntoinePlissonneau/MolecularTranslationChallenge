@@ -162,7 +162,12 @@ class Trainer:
                     'Data Load Time {data_time.val:.3f} ({data_time.avg:.3f})\t'
                     'Loss {loss.val:.4f} ({loss.avg:.4f})\t'.format(epoch, i, len(train_loader), batch_time=batch_time,                                                                          data_time=data_time, loss=losses))
 
-
+            #Checkpoint
+            if i % 2000 ==0:
+              save_checkpoint(self.data_name, epoch, self.epochs_since_improvement, self.model, self.model_optimizer, self.model_scheduler)
+              print('\n Model saved \n')
+            
+            
     def val_model(self, val_loader):
 
         """
