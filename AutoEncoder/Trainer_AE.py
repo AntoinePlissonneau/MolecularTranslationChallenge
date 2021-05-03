@@ -8,7 +8,7 @@ import torch.optim
 from torch import nn
 from tqdm import tqdm
 from utils_AE import *
-from models_AE import UNet
+from models_AE import *
 
 # ====================================================
 # Device
