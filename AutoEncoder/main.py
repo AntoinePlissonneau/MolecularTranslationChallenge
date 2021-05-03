@@ -4,9 +4,13 @@
 import numpy as np
 import pandas as pd
 import sys
+import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
-from Trainer import *
+from Trainer_AE import *
+from preprocess_AE import *
+import models_AE
+from utils_AE import *
 
 import warnings
 warnings.filterwarnings('ignore')
