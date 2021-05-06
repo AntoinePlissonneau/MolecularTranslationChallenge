@@ -76,19 +76,29 @@ def load_obj(name):
 
 # read International Chemical Identifier
 def draw_mol(fb, size1, size2):
-  mol = Chem.inchi.MolFromInchi(fb)
-  # draw molecule with angle degree rotation
-  d = Chem.Draw.rdMolDraw2D.MolDraw2DCairo(size1, size2)
-  AllChem.Compute2DCoords(mol)
-  d.drawOptions().bondLineWidth = 1
-  d.drawOptions().useDefaultAtomPalette()
-  mol = rdMolDraw2D.PrepareMolForDrawing(mol)
-  d.DrawMolecule(mol)
-  d.FinishDrawing()
-  d.WriteDrawingText("0.png")
-  return (255- cv2.imread("0.png", cv2.IMREAD_UNCHANGED))/255
+    """
+    Returns image of InchI.
+    :param fb: InchI 
+    :param size1: first size of the image
+    :param size2: second size of the image
+    """
+    mol = Chem.inchi.MolFromInchi(fb)
+    # draw molecule with angle degree rotation
+    d = Chem.Draw.rdMolDraw2D.MolDraw2DCairo(size1, size2)
+    AllChem.Compute2DCoords(mol)
+    d.drawOptions().bondLineWidth = 1
+    d.drawOptions().useDefaultAtomPalette()
+    mol = rdMolDraw2D.PrepareMolForDrawing(mol)
+    d.DrawMolecule(mol)
+    d.FinishDrawing()
+    d.WriteDrawingText("0.png")
+    return (255- cv2.imread("0.png", cv2.IMREAD_UNCHANGED))/255
 
 def svg_to_image(svg):
+    """
+    Returns image from svg.
+    :param svg: object in svg
+    """
     svg_str = et.tostring(svg)
     # TODO: would prefer to convert SVG dirrectly to a numpy array.
     png = cairosvg.svg2png(bytestring=svg_str)
@@ -96,6 +106,12 @@ def svg_to_image(svg):
     return image
 
 def random_molecule_image(inchi, render_size1, render_size2, drop_bonds=True):
+    """
+    Returns image of InchI with drop bonds.
+    :param inchi: InchI 
+    :param render_size1: first size of the image
+    :param render_size2: second size of the image
+    """
     # Note that the original image is returned as two layers: one for atoms and one for bonds.
     #mol = Chem.MolFromSmiles(smiles)
     mol = Chem.inchi.MolFromInchi(inchi)
