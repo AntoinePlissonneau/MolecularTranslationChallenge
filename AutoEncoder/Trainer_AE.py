@@ -209,3 +209,15 @@ class Trainer:
                         'Loss {loss.val:.4f} ({loss.avg:.4f})\t'.format(i, len(val_loader), batch_time=batch_time,loss=losses))
 
         return loss
+    
+    def predict(self, image, numpy=False):
+        """
+        Performs one prediction.
+        :param image: Tensor.
+        :param numpy: return a numpy array or tensor
+        """
+        self.model.eval()
+        pred = self.model(image.unsqueeze(0).to(device)).detach().cpu().squeeze()
+        if numpy:
+            pred = (pred.permute(1,2,0).numpy()*255).astype(np.uint8)
+        return pred
