@@ -48,7 +48,7 @@ class TrainDataset(Dataset):
     def __getitem__(self, idx):
         file_path = self.file_paths[idx]
         image = cv2.imread(file_path)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
+        image = (255 - cv2.cvtColor(image, cv2.COLOR_BGR2RGB)).astype(np.float32)
         h, w, _ = image.shape
         if h > w:
             image = self.fix_transform(image=image)['image']
@@ -79,7 +79,7 @@ class ValDataset(Dataset):
     def __getitem__(self, idx):
         file_path = self.file_paths[idx]
         image = cv2.imread(file_path)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
+        image = (255 - cv2.cvtColor(image, cv2.COLOR_BGR2RGB)).astype(np.float32)
         h, w, _ = image.shape
         if h > w:
             image = self.fix_transform(image=image)['image']
@@ -107,7 +107,7 @@ class TestDataset(Dataset):
     def __getitem__(self, idx):
         file_path = self.file_paths[idx]
         image = cv2.imread(file_path)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
+        image = (255 - cv2.cvtColor(image, cv2.COLOR_BGR2RGB)).astype(np.float32)
         h, w, _ = image.shape
         if h > w:
             image = self.fix_transform(image=image)['image']

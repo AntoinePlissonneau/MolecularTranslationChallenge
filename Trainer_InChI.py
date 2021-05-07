@@ -127,8 +127,8 @@ class Trainer:
             data_time.update(time.time() - start)
 
             # Move to GPU, if available
-            images = images.to(device)
-            labels = labels.to(device)
+            images = images.to(device, non_blocking=True)
+            labels = labels.to(device, non_blocking=True)
 
             # Gradient zero.
             self.model_optimizer.zero_grad()
@@ -162,7 +162,12 @@ class Trainer:
                     'Data Load Time {data_time.val:.3f} ({data_time.avg:.3f})\t'
                     'Loss {loss.val:.4f} ({loss.avg:.4f})\t'.format(epoch, i, len(train_loader), batch_time=batch_time,                                                                          data_time=data_time, loss=losses))
 
-
+            #Checkpoint
+            if i % 2000 ==0:
+              save_checkpoint(self.data_name, epoch, self.epochs_since_improvement, self.model, self.model_optimizer, self.model_scheduler)
+              print('\n Model saved \n')
+            
+            
     def val_model(self, val_loader):
 
         """
@@ -183,8 +188,8 @@ class Trainer:
             for i, (imgs, labs) in enumerate(val_loader):
 
                 # Move to device, if available
-                imgs = imgs.to(device)
-                labs = labs.to(device)
+                imgs = imgs.to(device, non_blocking=True)
+                labs = labs.to(device, non_blocking=True)
 
                 # Forward prop.
                 scores = self.model(imgs)
@@ -220,7 +225,7 @@ class Trainer:
             # Forward prop.
             scores = self.model(imgs)
 
-        return mol_fb(scores.squeeze(), atom)
+        return mol_fb(scores.squeeze().cpu(), atom)
 
     def predict_batch(self, image):
 

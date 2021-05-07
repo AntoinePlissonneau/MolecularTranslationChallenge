@@ -24,7 +24,7 @@ def seed_torch(seed=42):
     torch.cuda.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
 
-def save_checkpoint(data_name, epoch, epochs_since_improvement, model, model_optimizer, model_scheduler, mse, is_best):
+def save_checkpoint(data_name, epoch, epochs_since_improvement, model, model_optimizer, model_scheduler, mse = 10, is_best=False):
     """
     Saves model checkpoint.
     :param data_name: base name of processed dataset
@@ -43,7 +43,7 @@ def save_checkpoint(data_name, epoch, epochs_since_improvement, model, model_opt
              'model_scheduler': model_scheduler
              }
 
-    directory = 'F://bms-molecular-translation//checkpoint_train//'
+    directory = './'
     filename = 'checkpoint_' + data_name + '.pth.tar'
     torch.save(state, directory + filename)
     # If this checkpoint is the best so far, store a copy so it doesn't get overwritten by a worse checkpoint
