@@ -62,7 +62,7 @@ if __name__ == '__main__':
             'epochs': int(config['Training_parameters']['epochs']),
             'epochs_since_improvement': int(config['Training_parameters']['epochs_since_improvement']),
             'model_lr': float(config['Training_parameters']['model_lr']),
-            'grad_clip': (config['Training_parameters']['grad_clip']=='True'),
+            'grad_clip': eval(config['Training_parameters']['grad_clip']),
             'best_mse': float(config['Training_parameters']['best_mse']),
             'print_freq': int(config['Training_parameters']['print_freq']),
             'checkpoint': (config['Training_parameters']['checkpoint']=='True'),
