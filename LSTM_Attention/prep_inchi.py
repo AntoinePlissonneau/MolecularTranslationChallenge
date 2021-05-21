@@ -5,8 +5,6 @@ import os
 import re
 import numpy as np
 import pandas as pd
-from tqdm.auto import tqdm
-tqdm.pandas()
 import torch
 
 # ====================================================
@@ -133,7 +131,7 @@ def main():
         length = len(seq) - 2
         lengths.append(length)
     train['InChI_length'] = lengths
-    train['file_path'] = train['image_id'].progress_apply(get_train_file_path)
+    train['file_path'] = train['image_id'].apply(get_train_file_path)
     train.to_pickle('train2.pkl')
     print('Saved preprocessed train.pkl')
 

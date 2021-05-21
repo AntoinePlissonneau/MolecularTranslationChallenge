@@ -4,33 +4,55 @@
 import numpy as np
 import pandas as pd
 import sys
+import matplotlib.pyplot as plt
 
 import Levenshtein
 from sklearn.model_selection import train_test_split
+from Trainer_LSTMATT import *
+from preprocess_LSTMATT import *
+import models_LSTMATT
+from utils_LSTMATT import *
 
 import warnings
 warnings.filterwarnings('ignore')
+
+# ====================================================
+# Path
+# ====================================================
+
+# Path
+BASE_PATH = pathlib.Path(__file__).parent.resolve()
+INI_PATH = BASE_PATH.joinpath("ini").resolve()
+
+# ====================================================
+# preprocessing.ini
+# ====================================================
+config = ConfigParser()
+config.read(INI_PATH.joinpath("main.ini"))
+train_path = config['Main_parameters']['train_path']
+tokenizer_path = config['Main_parameters']['tokenizer_path']
+debug = (config['Main_parameters']['debug'] == 'True')
+random_seed = int(config['Main_parameters']['random_seed'])
+batch_size = int(config['Main_parameters']['batch_size'])
 
 # ====================================================
 # Main
 # ====================================================
 if __name__ == '__main__':
 
-    train = pd.read_pickle('../input/prep-train/train2.pkl')
-    tokenizer = torch.load('../input/tokenizer/tokenizer2.pth')
-
-    debug=False
+    train = pd.read_pickle(train_path)
+    tokenizer = torch.load(tokenizer_path)
 
     # Random seed
-    seed_torch(seed=42)
+    seed_torch(seed=random_seed)
 
     # Mode Debug
     if debug:
-        train = train.sample(n=5000, random_state=42).reset_index(drop=True)
-        train , val = train_test_split(train, random_state=42)
+        train = train.sample(n=5000, random_state=random_seed).reset_index(drop=True)
+        train , val = train_test_split(train, random_state=random_seed)
 
     else:
-        train, val = train_test_split(train, test_size=0.10, random_state=42)
+        train, val = train_test_split(train, test_size=0.10, random_state=random_seed)
         train.reset_index(drop=True)
         val.reset_index(drop=True)
 
@@ -39,21 +61,21 @@ if __name__ == '__main__':
     val_dataset = TrainDataset(val,  tokenizer, transform=get_transforms(data='train'))
 
     train_loader = DataLoader(train_dataset,
-                              batch_size=32,
+                              batch_size=batch_size,
                               shuffle=True,
                               drop_last=True,
                               pin_memory=True,
                               collate_fn=bms_collate)
 
     val_loader = DataLoader(val_dataset,
-                            batch_size=32,
+                            batch_size=batch_size,
                             shuffle=True,
                             drop_last=True,
                             pin_memory=True,
                             collate_fn=bms_collate)
 
     config = ConfigParser()
-    config.read('./params.ini')
+    config.read(INI_PATH.joinpath("params.ini"))
 
     # general parameters
     params = {'data_name': config['Data_parameters']['data_name'],
