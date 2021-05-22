@@ -16,6 +16,7 @@ from albumentations.pytorch import ToTensorV2
 from albumentations import ImageOnlyTransform
 from configparser import ConfigParser
 import sys
+from torch.nn.utils.rnn import pad_sequence, pack_padded_sequence
 
 from utils_LSTMATT import *
 import pathlib
