@@ -9,6 +9,7 @@ import cv2
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
+from torch.nn.utils.rnn import pad_sequence, pack_padded_sequence
 
 import albumentations as A
 from albumentations import (Compose, OneOf, Normalize, Resize)
@@ -16,7 +17,6 @@ from albumentations.pytorch import ToTensorV2
 from albumentations import ImageOnlyTransform
 from configparser import ConfigParser
 import sys
-from torch.nn.utils.rnn import pad_sequence, pack_padded_sequence
 
 from utils_LSTMATT import *
 import pathlib
