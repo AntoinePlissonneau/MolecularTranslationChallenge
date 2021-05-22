@@ -4,6 +4,7 @@
 import time
 import torch
 import torch.backends.cudnn as cudnn
+from torch.nn.utils.rnn import pad_sequence, pack_padded_sequence
 import torch.optim
 from torch import nn
 from tqdm import tqdm
@@ -78,8 +79,7 @@ class Trainer_LSTMATT:
 
             # Scheduler for learning rate
             self.decoder_scheduler = torch.optim.lr_scheduler.StepLR(self.decoder_optimizer, step_size=7, gamma=0.1)
-            if self.fine_tune_encoder:
-                self.encoder_scheduler = torch.optim.lr_scheduler.StepLR(self.encoder_optimizer, step_size=7, gamma=0.1)
+            self.encoder_scheduler = torch.optim.lr_scheduler.StepLR(self.encoder_optimizer, step_size=7, gamma=0.1) if self.fine_tune_encoder else None
 
         else:
             checkpoint_path = params['checkpoint_path']
@@ -89,15 +89,18 @@ class Trainer_LSTMATT:
             self.best_cross = checkpoint['cross']
             self.encoder = checkpoint['encoder']
             self.encoder_optimizer = checkpoint['encoder_optimizer']
-
+            self.encoder_scheduler = checkpoint['encoder_scheduler']
+            
             if self.fine_tune_encoder is True and self.encoder_optimizer is None:
                 self.encoder.fine_tune(self.fine_tune_encoder)
                 self.encoder_optimizer = torch.optim.Adam(params=filter(lambda p: p.requires_grad, self.encoder.parameters()),
                                                  lr=self.encoder_lr)
+                self.encoder_scheduler = torch.optim.lr_scheduler.StepLR(self.encoder_optimizer, step_size=7, gamma=0.1)
 
             self.decoder = checkpoint['decoder']
             self.decoder_optimizer = checkpoint['decoder_optimizer']
-
+            self.decoder_scheduler = checkpoint['decoder_scheduler']
+            
         # Learning rate
         for g in self.decoder_optimizer.param_groups:
             g['lr'] = self.decoder_lr
@@ -134,8 +137,10 @@ class Trainer_LSTMATT:
             # One epoch's validation
             recent_cross = self.val_model(val_loader=val_loader)
 
-            self.model_scheduler.step()
-
+            if self.fine_tune_encoder:
+                self.encoder_scheduler.step()
+            self.decoder_scheduler.step()
+                
             # Check if there was an improvement
             is_best = recent_cross > self.best_cross
             self.best_cross = max(recent_cross, self.best_cross)
