@@ -1,1 +1,1 @@
-"# MolecularTranslationChallenge" 
+# MolecularTranslationChallenge 
