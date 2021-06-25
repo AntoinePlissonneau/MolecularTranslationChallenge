@@ -28,7 +28,7 @@ Here are some captions generated on _test_ images not seen during training or va
 
 ---
 
-![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_2.png "RES 1")
+![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_2.png "RES 2")
 
 ---
 
