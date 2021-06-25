@@ -20,7 +20,7 @@ I'm using `PyTorch 1.7.1` in `Python 3.8.5`.
 
 This AutoEncoder facilitates the work of the YOLO algorithm and the attention mechanism developed in parallel.
 
-Here are some captions generated on _test_ images not seen during training or validation:
+Here are some results generated on _test_ images not seen during training or validation:
 
 ---
 
