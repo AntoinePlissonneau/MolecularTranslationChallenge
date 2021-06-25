@@ -6,3 +6,4 @@ This AutoEncoder facilitates the work of the YOLO algorithm and the attention me
 
 ![alt text](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_1.png "RES 0")
 ![alt text](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_2.png "RES 1")
+
