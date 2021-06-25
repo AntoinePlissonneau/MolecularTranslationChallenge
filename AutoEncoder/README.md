@@ -32,6 +32,10 @@ Here are some captions generated on _test_ images not seen during training or va
 
 ---
 
+![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_3.png "RES 4")
+
+---
+
 There are more examples at the [end of the tutorial](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#some-more-examples).
 
 ---
@@ -41,3 +45,16 @@ There are more examples at the [end of the tutorial](https://github.com/AntoineP
 ### Some more examples
 
 ---
+
+![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_4.png "RES 6")
+
+---
+
+![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_5.png "RES 8")
+
+---
+
+![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_6.png "RES 10")
+
+---
+
