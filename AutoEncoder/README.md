@@ -16,7 +16,7 @@ I'm using `PyTorch 1.7.1` in `Python 3.8.5`.
 
 # Objective
 
-**AutoEncoder based on Unet architecture whose goal is to remove the disturbances on the images of molecules, to give color to the molecules, and to reconstruct the missing bonds.**
+**AutoEncoder is based on Unet architecture whose goal is to remove the disturbances on the images of molecules, to give color to the molecules, and to reconstruct the missing bonds.**
 
 This AutoEncoder facilitates the work of the YOLO algorithm and the attention mechanism developed in parallel.
 
