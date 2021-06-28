@@ -85,6 +85,9 @@ The autoencoder then learns a reconstruction distribution *p<sub>reconstruct</su
 
 Typically we can simply perform gradient-based approximate minimization (such as minibatch gradient descent) on the negative log-likelihood *−log p<sub>decoder</sub>(x|h)*. So long as the encoder is deterministic, the denoising autoencoder is a feedforward network and may be trained with exactly the same techniques as any other feedforward network.
 
+### U-Net
+
+
 
 # Implementation
 
