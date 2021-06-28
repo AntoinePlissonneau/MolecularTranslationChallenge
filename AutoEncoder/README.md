@@ -69,7 +69,16 @@ Modern autoencoders have generalized the idea of an encoder and a decoder beyond
 ### Denoising AutoEncoders
 
 The denoising autoencoder (DAE) is an autoencoder that receives a corrupted data point as input and is trained to predict the original, uncorrupted data point
-as its output. We introduce a corruption process *C(x̃|x)* which represents a conditional distribution over corrupted samples *x̃*, given a data sample *x*. The autoencoder then learns a reconstruction distribution *p<sub>reconstruct</sub>(x|x̃)* estimated from training pairs *(x,x̃)*, as follows:
+as its output. We introduce a corruption process *C(x̃|x)* which represents a conditional distribution over corrupted samples *x̃*, given a data sample *x*. 
+
+<p align="center">
+  <img src="./img/archi_1.png">
+  <p align="center">
+    The computational graph of the cost function for a denoising autoencoder, which is trained to reconstruct the clean data point <i>x</i> from its corrupted version <i>x̃</i>. This is accomplished by minimizing the loss <i>L = −log p<sub>decoder</sub>(x|h = f(x̃))</i>, where <i>x̃</i> is a corrupted version of the data example <i>x</i>, obtained through a given corruption process <i>C(x̃|x)</i>. Typically the distribution <i>p<sub>decoder</sub></i> is a factorial distribution whose mean parameters are emitted by a feedforward network <i>g</i>.
+  </p>
+</p>
+
+The autoencoder then learns a reconstruction distribution *p<sub>reconstruct</sub>(x|x̃)* estimated from training pairs *(x,x̃)*, as follows:
 1. Sample a training example *x* from the training data.
 2. Sample a corrupted version *x̃* from *C(x̃|x = x)*.
 3. Use *(x,x̃)* as a training example for estimating the autoencoder reconstruction distribution *p<sub>reconstruct</sub>(x|x̃) = p<sub>decoder</sub>(x|h)* with *h* the output of encoder *f(x̃)* and *p<sub>decoder</sub>* typically defined by a decoder *g(h)*.
