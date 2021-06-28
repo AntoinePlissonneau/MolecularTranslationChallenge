@@ -1,5 +1,7 @@
 # AutoEncoder
 
+This is a presentation of a **[PyTorch](https://pytorch.org) AutoEncoder used in the [Kaggle competition](https://www.kaggle.com/c/bms-molecular-translation)**. 
+
 Basic knowledge of PyTorch, convolutional networks is assumed.
 
 Questions, suggestions, or corrections can be posted as issues.
