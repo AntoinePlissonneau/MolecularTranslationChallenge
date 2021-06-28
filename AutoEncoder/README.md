@@ -64,6 +64,11 @@ Modern autoencoders have generalized the idea of an encoder and a decoder beyond
   </p>
 </p>
 
+<p align="center">
+  <b> This section was built with: <a href="https://www.deeplearningbook.org/">Ian Goodfellow, Yoshua Bengio, and Aaron Courville (2016) <i>Deep Learning (Adaptive Computation and Machine Learning).</i> In Deep Learning Research, pages 502–503. MIT Press.</a>
+  </b>
+</p>
+
 ### Denoising AutoEncoders
 
 The denoising autoencoder (DAE) is an autoencoder that receives a corrupted data point as input and is trained to predict the original, uncorrupted data point
@@ -83,6 +88,11 @@ The autoencoder then learns a reconstruction distribution *p<sub>reconstruct</su
 
 Typically we can simply perform gradient-based approximate minimization (such as minibatch gradient descent) on the negative log-likelihood *−log p<sub>decoder</sub>(x|h)*. So long as the encoder is deterministic, the denoising autoencoder is a feedforward network and may be trained with exactly the same techniques as any other feedforward network.
 
+<p align="center">
+  <b> This section was built with: <a href="https://www.deeplearningbook.org/">Ian Goodfellow, Yoshua Bengio, and Aaron Courville (2016) <i>Deep Learning (Adaptive Computation and Machine Learning).</i> In Deep Learning Research, pages 510–512. MIT Press.</a>
+  </b>
+</p>
+
 ### U-Net
 
 The main idea is to supplement a usual contracting network by successive layers, where pooling operators are replaced by upsampling operators. Hence, these layers increase the resolution of the output. In order to localize, high resolution features from the contracting path are combined with the upsampled output. A successive convolution layer can then learn to assemble a more precise output based on this information. One important modification in this architecture is that the upsampling part has also a large number of feature channels, which allow the network to propagate context information to higher resolution layers. As a consequence, the expansive path is more or less symmetric to the contracting path, and yields a u-shaped architecture. The network does not have any fully connected layers and only uses the valid part of each convolution, i.e., the segmentation map only contains the pixels, for which the full context is available in the input image.
@@ -95,7 +105,7 @@ The main idea is to supplement a usual contracting network by successive layers,
 </p>
 
 <p align="center">
-  <b> This section was built with: <a href="https://arxiv.org/abs/1505.04597">Olaf Ronneberger, Philipp Fischer, and Thomas Bro (2015) <i>U-Net: Convolutional Networks for Biomedical Image Segmentation</i>, Computer Science Department and BIOSS Centre for Biological Signalling Studies, University of Freiburg, Germany, arXiv:1505.04597 [cs.CV]</a>
+  <b> This section was built with: <a href="https://arxiv.org/abs/1505.04597">Olaf Ronneberger, Philipp Fischer, and Thomas Bro (2015) <i>U-Net: Convolutional Networks for Biomedical Image Segmentation</i>, Computer Science Department and BIOSS Centre for Biological Signalling Studies, University of Freiburg, Germany, arXiv:1505.04597. [cs.CV]</a>
   </b>
 </p>
 
