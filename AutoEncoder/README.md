@@ -131,6 +131,10 @@ The sections below briefly describe the implementation.
 
 # Training
 
+### Loss Function
+
+We use **[`MSELoss`](https://pytorch.org/docs/master/generated/torch.nn.MSELoss.html#torch.nn.MSELoss)**.
+
 # Inference
 
 ### Some more examples
