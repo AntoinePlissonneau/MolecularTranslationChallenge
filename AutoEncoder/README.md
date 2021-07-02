@@ -133,7 +133,20 @@ The sections below briefly describe the implementation.
 
 ### Loss Function
 
-We use **[`MSELoss`](https://pytorch.org/docs/master/generated/torch.nn.MSELoss.html#torch.nn.MSELoss)**.
+We use **[`MSELoss`](https://pytorch.org/docs/master/generated/torch.nn.MSELoss.html#torch.nn.MSELoss)**. This emphasizes restoring color to the images and reconstructing the missing links.
+
+### Evaluation with Levenshtein distance
+
+To evaluate the model's performance on the validation set, we will use the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) string metric. The Levenshtein distance is a number that tells you how different two strings are. The higher the number, the more different the two strings are.
+
+<p align="center">
+  <img src="#">
+  <p align="center">
+    U-net architecture (example for 32x32 pixels in the lowest resolution). Each blue box corresponds to a multi-channel feature map. The number of channels is denoted on top of the box. The x-y-size is provided at the lower left edge of the box. White boxes represent copied feature maps. The arrows denote the different operations.
+  </p>
+</p>
+
+We used the Levenshtein distance tool [available in the Levenshtein module](https://pypi.org/project/python-Levenshtein/).
 
 # Inference
 
