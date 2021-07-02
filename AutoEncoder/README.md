@@ -18,6 +18,8 @@ I'm using `PyTorch 1.7.1` in `Python 3.8.5`.
 
 [***Implementation***](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#implementation)
 
+[***Training***](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#training)
+
 [***Inference***](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#inference)
 
 # Objective
@@ -112,6 +114,8 @@ The main idea is to supplement a usual contracting network by successive layers,
 # Implementation
 
 The sections below briefly describe the implementation.
+
+# Training
 
 # Inference
 
