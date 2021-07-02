@@ -137,14 +137,7 @@ We use **[`MSELoss`](https://pytorch.org/docs/master/generated/torch.nn.MSELoss.
 
 ### Evaluation with Levenshtein distance
 
-To evaluate the model's performance on the validation set, we will use the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) string metric. The Levenshtein distance is a number that tells you how different two strings are. The higher the number, the more different the two strings are.
-
-<p align="center">
-  <img src="#">
-  <p align="center">
-    U-net architecture (example for 32x32 pixels in the lowest resolution). Each blue box corresponds to a multi-channel feature map. The number of channels is denoted on top of the box. The x-y-size is provided at the lower left edge of the box. White boxes represent copied feature maps. The arrows denote the different operations.
-  </p>
-</p>
+To evaluate the model's performance on the validation set, we will use the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) string metric. The Levenshtein distance is a number that tells you how different two strings are. The higher the number, the more different the two strings are. Informally, the Levenshtein distance between two words is the minimum number of single-character edits (insertions, deletions or substitutions) required to change one word into the other.
 
 We used the Levenshtein distance tool [available in the Levenshtein module](https://pypi.org/project/python-Levenshtein/).
 
