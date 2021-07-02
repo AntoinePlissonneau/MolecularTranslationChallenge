@@ -14,13 +14,15 @@ I'm using `PyTorch 1.7.1` in `Python 3.8.5`.
 
 [***Objective***](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#objective)
 
+[***Concepts***](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#concepts)
+
 [***Overview***](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#overview)
 
 [***Implementation***](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#implementation)
 
 [***Training***](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#training)
 
-[***Inference***](./AutoEncoder#inference)
+[***Inference***](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#inference)
 
 # Objective
 
@@ -51,6 +53,8 @@ Here are some results generated on _test_ images not seen during training or val
 There are more examples at the [end of the tutorial](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#some-more-examples).
 
 ---
+
+# Concepts
 
 # Overview
 
