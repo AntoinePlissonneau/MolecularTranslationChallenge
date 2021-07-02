@@ -28,6 +28,8 @@ I'm using `PyTorch 1.7.1` in `Python 3.8.5`.
 
 **AutoEncoder is based on Unet architecture whose goal is to remove the disturbances on the images of molecules, to give color to the molecules, and to reconstruct the missing bonds.**
 
+This is possible because of its U-net architecture, which allows it to focus on the aspects (color, noise, erasure) of the image that is most relevant for reconstruction.
+
 Here are some results generated on _test_ images not seen during training or validation:
 
 ---
