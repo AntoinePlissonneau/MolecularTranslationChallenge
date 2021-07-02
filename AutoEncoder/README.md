@@ -30,16 +30,20 @@ Here are some results generated on _test_ images not seen during training or val
 
 ---
 
-![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_1.png "RES 0")
+<p align="center">
+  <img src="./img/AE_1.png">
+</p>
 
 ---
 
-![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_2.png "RES 2")
-
+<p align="center">
+  <img src="./img/AE_2.png">
+</p>
 ---
 
-![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_3.png "RES 4")
-
+<p align="center">
+  <img src="./img/AE_3.png">
+</p>
 ---
 
 There are more examples at the [end of the tutorial](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#some-more-examples).
@@ -123,15 +127,20 @@ The sections below briefly describe the implementation.
 
 ---
 
-![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_4.png "RES 6")
+<p align="center">
+  <img src="./img/AE_4.png">
+</p>
+---
+
+<p align="center">
+  <img src="./img/AE_5.png">
+</p>
 
 ---
 
-![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_5.png "RES 8")
-
----
-
-![](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/img/AE_6.png "RES 10")
+<p align="center">
+  <img src="./img/AE_6.png">
+</p>
 
 ---
 
