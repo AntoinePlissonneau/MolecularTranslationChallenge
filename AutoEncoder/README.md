@@ -56,6 +56,10 @@ There are more examples at the [end of the tutorial](https://github.com/AntoineP
 
 # Concepts
 
+* **AutoEncoder**: A classical image autoencoder takes an image, maps it to a latent vector space via an encoder module, and then decodes it back to an output with the same dimensions as the original image, via a decoder module. It’s then trained by using as target data the same images as the input images, meaning the autoencoder learns to reconstruct the original inputs. By imposing various constraints on the code (the output of the encoder), you can get the autoencoder to learn more-or-less interesting latent representations of the data.
+
+* **Denoising AutoEncoder**: This is a special kind of autoencoder, first explored in 2008 by Vincent et al. It basically works with corrupt data as its inputs and attempts to reconstruct the noisy signal. It manages that by abstracting what is called the manifold of the data, which is the shape we wish to capture when the dimensionality of the data is reduced. Once a form of the manifold is abstracted based on the input data, the autoencoder rebuilds that signal and outputs what it believes to be a more accurate representation of the original inputs.
+
 # Overview
 
 In this section, we will present an overview of this model. If you're already familiar with it, you can skip straight to the [Implementation](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#implementation) section or the commented code.
