@@ -30,6 +30,8 @@ I'm using `PyTorch 1.7.1` in `Python 3.8.5`.
 
 This is possible because of its U-net architecture, which allows it to focus on the aspects (color, noise, erasure) of the image that is most relevant for reconstruction.
 
+In addition, the results of the autoencoder will allow the use of a YOLO algorithm in the rest of the project, which aims to detect bonds and atoms in order to predict the corresponding INCHI.
+
 Here are some results generated on _test_ images not seen during training or validation:
 
 ---
