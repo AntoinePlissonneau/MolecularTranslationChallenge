@@ -39,11 +39,13 @@ Here are some results generated on _test_ images not seen during training or val
 <p align="center">
   <img src="./img/AE_2.png">
 </p>
+
 ---
 
 <p align="center">
   <img src="./img/AE_3.png">
 </p>
+
 ---
 
 There are more examples at the [end of the tutorial](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/tree/main/AutoEncoder#some-more-examples).
@@ -130,6 +132,7 @@ The sections below briefly describe the implementation.
 <p align="center">
   <img src="./img/AE_4.png">
 </p>
+
 ---
 
 <p align="center">
