@@ -145,12 +145,6 @@ You'd need to download the [BMS-Molecular-Translation data](https://www.kaggle.c
 
 We use **[`MSELoss`](https://pytorch.org/docs/master/generated/torch.nn.MSELoss.html#torch.nn.MSELoss)**. This emphasizes restoring color to the images and reconstructing the missing links.
 
-### Evaluation with Levenshtein distance
-
-To evaluate the model's performance on the validation set, we will use the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) string metric. The Levenshtein distance is a number that tells you how different two strings are. The higher the number, the more different the two strings are. Informally, the Levenshtein distance between two words is the minimum number of single-character edits (insertions, deletions or substitutions) required to change one word into the other.
-
-We used the Levenshtein distance tool [available in the Levenshtein module](https://pypi.org/project/python-Levenshtein/).
-
 # Inference
 
 ### Some more examples
