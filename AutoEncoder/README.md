@@ -133,6 +133,12 @@ The main idea is to supplement a usual contracting network by successive layers,
 
 The sections below briefly describe the implementation.
 
+They are meant to provide some context, but **details are best understood directly from the code**, which is quite heavily commented.
+
+### Dataset
+
+You'd need to download the [BMS-Molecular-Translation data](https://www.kaggle.com/c/bms-molecular-translation/data).
+
 # Training
 
 ### Loss Function
