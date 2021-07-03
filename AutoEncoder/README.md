@@ -139,6 +139,16 @@ They are meant to provide some context, but **details are best understood direct
 
 You'd need to download the [BMS-Molecular-Translation data](https://www.kaggle.com/c/bms-molecular-translation/data).
 
+### Input to model
+
+##### Images
+
+Also, PyTorch follows the NCHW convention, which means the channels dimension (C) must precede the size dimensions.
+
+We will resize all images to 224x224 for uniformity. However, this size is variable and can be defined by the user. A multiple of 32 is preferable if the objective is to use the entire project. This size was selected because it was suitable for the rest of the project (attention mechanism and YOLO algorithm).
+
+Therefore, **images fed to the model must be a `Float` tensor of dimension `N, 1, 224, 224`**, and must be normalized between [0,1]. We chose this normalization because the activation function used in the U-net architecture is [`RELU`](https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html). `N` is the batch size.
+
 # Training
 
 ### Loss Function
