@@ -4,7 +4,6 @@
 import numpy as np
 import pandas as pd
 import sys
-sys.path.append("F://bms-molecular-translation//Autoencoder")
 import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
@@ -23,6 +22,7 @@ warnings.filterwarnings('ignore')
 # Path
 BASE_PATH = pathlib.Path(__file__).parent.resolve()
 INI_PATH = BASE_PATH.joinpath("ini").resolve()
+CHECK_PATH = BASE_PATH.joinpath("checkpoint").resolve()
 
 # ====================================================
 # preprocessing.ini
@@ -83,7 +83,7 @@ if __name__ == '__main__':
             'best_mse': float(config['Training_parameters']['best_mse']),
             'print_freq': int(config['Training_parameters']['print_freq']),
             'checkpoint': (config['Training_parameters']['checkpoint']=='True'),
-            'checkpoint_path':config['Training_parameters']['checkpoint_path']
+            'checkpoint_path': CHECK_PATH.joinpath(config['Training_parameters']['checkpoint_path'])
             }
 
     mol = Trainer(params)
