@@ -192,6 +192,10 @@ We will resize all images to 224x224 for uniformity. However, this size is varia
 
 Therefore, **images fed to the model must be a `Float` tensor of dimension `N, 1, 224, 224`**, and must be normalized between **`[0,1]`**. We chose this normalization because the activation function used in the U-net architecture is **[`RELU`](https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html)**. **`N`** is the batch size.
 
+### U-Net
+
+See `Unet` in [`models_AE.py`](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/models_AE.py).
+
 # Training
 
 ### Loss Function
