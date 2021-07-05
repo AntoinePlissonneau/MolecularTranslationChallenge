@@ -89,26 +89,26 @@ if __name__ == '__main__':
     mol = Trainer(params)
     mol.train_val_model(train_loader, val_loader)
 
-    df_test = pd.read_csv("../input/bms-molecular-translation/sample_submission.csv").copy()
+    #df_test = pd.read_csv("../input/bms-molecular-translation/sample_submission.csv").copy()
 
-    def get_test_file_path(image_id):
-      return "../input/bms-molecular-translation/test/{}/{}/{}/{}.png".format(
-          image_id[0], image_id[1], image_id[2], image_id)
+    #def get_test_file_path(image_id):
+      #return "../input/bms-molecular-translation/test/{}/{}/{}/{}.png".format(
+          #image_id[0], image_id[1], image_id[2], image_id)
 
-    df_test['file_path'] = df_test['image_id'].progress_apply(get_test_file_path)
+    #df_test['file_path'] = df_test['image_id'].progress_apply(get_test_file_path)
 
-    test_img_dataset = TestDataset(df_test,transform=get_transforms(data='valid'))
+    #test_img_dataset = TestDataset(df_test,transform=get_transforms(data='valid'))
 
-    index = 2003
+    #index = 2003
 
-    inp_ = (test_img_dataset[index].squeeze().numpy()*255).astype(np.uint8)
-    pred_ = mol.model(test_img_dataset[index].unsqueeze(0).to(device))
-    pred_ = (pred_.detach().cpu().squeeze().permute(1,2,0).numpy()*255).astype(np.uint8)
+    #inp_ = (test_img_dataset[index].squeeze().numpy()*255).astype(np.uint8)
+    #pred_ = mol.model(test_img_dataset[index].unsqueeze(0).to(device))
+    #pred_ = (pred_.detach().cpu().squeeze().permute(1,2,0).numpy()*255).astype(np.uint8)
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(50,100))
+    #fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(50,100))
 
-    # Display the image
-    ax1.imshow(inp_)
-    ax1.set_title('Val_Input', fontsize=50)
-    ax2.imshow(pred_)
-    ax2.set_title('Prediction', fontsize=50)
+    ## Display the image
+    #ax1.imshow(inp_)
+    #ax1.set_title('Val_Input', fontsize=50)
+    #ax2.imshow(pred_)
+    #ax2.set_title('Prediction', fontsize=50)
