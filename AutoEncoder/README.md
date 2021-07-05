@@ -143,7 +143,7 @@ You'd need to download the [BMS-Molecular-Translation data](https://www.kaggle.c
 
 ##### Images
 
-The synthetic images were made with the [RDkit library](https://www.rdkit.org/docs/Cookbook.html) of python.
+The synthetic images were made with the [RDKit library](https://www.rdkit.org/docs/Cookbook.html) of python.
 
 Also, PyTorch follows the NCHW convention, which means the channels dimension (C) must precede the size dimensions.
 
