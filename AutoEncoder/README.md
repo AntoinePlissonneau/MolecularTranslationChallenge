@@ -178,6 +178,12 @@ The number of links, pixels to be deleted or added can be modified to choose the
   </p>
 </p>
 
+Thus the autoencoder is trained on a set of synthetic images. This is then evaluated on the available images. It is thus able to transform the training images for the rest of the project but also the test images on which we are evaluated during the competition.
+
+<p align="center">
+  <img src="./img/Process_1.png">
+</p>
+
 Also, PyTorch follows the NCHW convention, which means the channels dimension (C) must precede the size dimensions.
 
 We will resize all images to 224x224 for uniformity. However, this size is variable and can be defined by the user. A multiple of 32 is preferable if the objective is to use the entire project. This size was selected because it was suitable for the rest of the project (attention mechanism and YOLO algorithm).
