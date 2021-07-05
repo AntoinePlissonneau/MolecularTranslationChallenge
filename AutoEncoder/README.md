@@ -194,7 +194,7 @@ Therefore, **images fed to the model must be a `Float` tensor of dimension `N, 1
 
 ### U-Net
 
-See `Unet` in [`models_AE.py`](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/models_AE.py).
+See `UNet` in [`models_AE.py`](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/models_AE.py).
 
 # Training
 
