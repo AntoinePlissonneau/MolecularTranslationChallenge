@@ -158,7 +158,7 @@ We will use the RDKit library to obtain the target images for our autoencoder. H
 To make the problem easier, we decided to leave out the available images (black and white) and to start with the RDKit images to degrade them so that they have the same appearance as the available images.
 
 <p align="center">
-  <img src="./img/Process_0.png">
+  <img src="./img/Process.png">
   <p align="center">
     The process of degrading the original image to make the image similar to the available images in terms of characteristics (color, porosity, lack of binding).
   </p>
