@@ -151,11 +151,18 @@ We will use the RDKit library to obtain the target images for our autoencoder. H
 <p align="center">
   <img src="./img/prob_1.png">
   <p align="center">
-    U-net architecture (example for 32x32 pixels in the lowest resolution). Each blue box corresponds to a multi-channel feature map. The number of channels is denoted on top of the box. The x-y-size is provided at the lower left edge of the box. White boxes represent copied feature maps. The arrows denote the different operations.
+    On the left: an image available in the database in black and white. On the right: a target image generated with the RDKit library. To go from one image to another, it is necessary to carry out a rotation and a homothety so that the contents of the two images correspond. The objective of the autoencoder is to work on the form (color) and not the content of the image.
   </p>
 </p>
 
 To make the problem easier, we decided to leave out the available images (black and white) and to start with the RDKit images to degrade them so that they have the same appearance as the available images.
+
+<p align="center">
+  <img src="./img/Process_0.png">
+  <p align="center">
+    The process of degrading the original image to make the image similar to the available images in terms of characteristics (color, porosity, lack of binding).
+  </p>
+</p>
 
 Also, PyTorch follows the NCHW convention, which means the channels dimension (C) must precede the size dimensions.
 
