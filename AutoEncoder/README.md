@@ -169,12 +169,12 @@ To make the problem easier, we decided to leave out the available images (black 
   </p>
 </p>
 
-The number of links, pixels to be deleted or added can be modified to choose the behaviour of the Autoencoder.
+The number of links, pixels to be deleted or added can be modified to choose the behavior of the autoencoder.
 
 <p align="center">
   <img src="./img/Process_0_5.png">
   <p align="center">
-    The process of degrading the original image to make the image similar to the available images in terms of characteristics (color, porosity, lack of binding).
+    In this example, the synthetic image is of lower quality than the available image. This is deliberate to obtain a robust autoencoder, capable of producing satisfactory results on different image qualities.
   </p>
 </p>
 
