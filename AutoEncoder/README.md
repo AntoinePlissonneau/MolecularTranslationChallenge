@@ -145,6 +145,18 @@ You'd need to download the [BMS-Molecular-Translation data](https://www.kaggle.c
 
 The synthetic images were made with the [RDKit library](https://www.rdkit.org/docs/Cookbook.html) of python.
 
+The objective of the autoencoder is to transform a black and white, porous and incomplete image into a colored, chemically coherent, and readable image.
+We will use the RDKit library to obtain the target images for our autoencoder. However, the available images and the target images are different. Indeed, some images are different and transformations (rotation, homothety) must be performed to go from one image to another.
+
+<p align="center">
+  <img src="./img/prob_1.png">
+  <p align="center">
+    U-net architecture (example for 32x32 pixels in the lowest resolution). Each blue box corresponds to a multi-channel feature map. The number of channels is denoted on top of the box. The x-y-size is provided at the lower left edge of the box. White boxes represent copied feature maps. The arrows denote the different operations.
+  </p>
+</p>
+
+To make the problem easier, we decided to leave out the available images (black and white) and to start with the RDKit images to degrade them so that they have the same appearance as the available images.
+
 Also, PyTorch follows the NCHW convention, which means the channels dimension (C) must precede the size dimensions.
 
 We will resize all images to 224x224 for uniformity. However, this size is variable and can be defined by the user. A multiple of 32 is preferable if the objective is to use the entire project. This size was selected because it was suitable for the rest of the project (attention mechanism and YOLO algorithm).
