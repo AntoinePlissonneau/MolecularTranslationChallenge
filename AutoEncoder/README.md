@@ -169,6 +169,15 @@ To make the problem easier, we decided to leave out the available images (black 
   </p>
 </p>
 
+The number of links, pixels to be deleted or added can be modified to choose the behaviour of the Autoencoder.
+
+<p align="center">
+  <img src="./img/Process_0_5.png">
+  <p align="center">
+    The process of degrading the original image to make the image similar to the available images in terms of characteristics (color, porosity, lack of binding).
+  </p>
+</p>
+
 Also, PyTorch follows the NCHW convention, which means the channels dimension (C) must precede the size dimensions.
 
 We will resize all images to 224x224 for uniformity. However, this size is variable and can be defined by the user. A multiple of 32 is preferable if the objective is to use the entire project. This size was selected because it was suitable for the rest of the project (attention mechanism and YOLO algorithm).
