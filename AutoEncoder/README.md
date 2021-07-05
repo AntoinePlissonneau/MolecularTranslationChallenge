@@ -143,6 +143,8 @@ You'd need to download the [BMS-Molecular-Translation data](https://www.kaggle.c
 
 ##### Images
 
+The synthetic images were made with the [RDkit library](https://www.rdkit.org/docs/Cookbook.html) of python.
+
 Also, PyTorch follows the NCHW convention, which means the channels dimension (C) must precede the size dimensions.
 
 We will resize all images to 224x224 for uniformity. However, this size is variable and can be defined by the user. A multiple of 32 is preferable if the objective is to use the entire project. This size was selected because it was suitable for the rest of the project (attention mechanism and YOLO algorithm).
