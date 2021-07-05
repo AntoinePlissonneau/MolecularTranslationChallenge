@@ -161,6 +161,11 @@ To make the problem easier, we decided to leave out the available images (black 
   <img src="./img/Process.png">
   <p align="center">
     The process of degrading the original image to make the image similar to the available images in terms of characteristics (color, porosity, lack of binding).
+    <br>1: Generating the image with the RDKit library using the available InChI.
+    <br>2: Random bonds removal and 3 channels black and white (RGB) transformation.
+    <br>3: Change from 3 to 1 channel to get a greyscale image since mask to get a black and white image.
+    <br>4: Removal of pixels (1->0) randomly to decrease the quality of the links.
+    <br>5: Adding pixels (0->1) randomly to create a porosity aspect on the image.
   </p>
 </p>
 
