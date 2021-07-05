@@ -145,7 +145,7 @@ You'd need to download the [BMS-Molecular-Translation data](https://www.kaggle.c
 
 The synthetic images were made with the [RDKit library](https://www.rdkit.org/docs/Cookbook.html) of python.
 
-See [`prerpocess.py`](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/AutoEncoder/blob/master/preprocess.py).
+See [`preprocess.py`](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/AutoEncoder/preprocess.py).
 
 The objective of the autoencoder is to transform a black and white, porous and incomplete image into a colored, chemically coherent, and readable image.
 We will use the RDKit library to obtain the target images for our autoencoder. However, the available images and the target images are different. Indeed, some images are different and transformations (rotation, homothety) must be performed to go from one image to another.
