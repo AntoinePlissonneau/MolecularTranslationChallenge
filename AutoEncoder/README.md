@@ -204,6 +204,12 @@ The U-Net network is simple – it's composed of `Down` and `Up` with `DoubleCon
 
 We use **[`MSELoss`](https://pytorch.org/docs/master/generated/torch.nn.MSELoss.html#torch.nn.MSELoss)**. This emphasizes restoring color to the images and reconstructing the missing links.
 
+### Model Checkpoint
+
+You can download this pretrained model [here](https://drive.google.com/file/d/17bhebttizD0tXaeZ499X4F33dboIBMgN/view?usp=sharing).
+
+Note that this checkpoint should be [loaded directly with PyTorch](https://pytorch.org/docs/stable/torch.html?#torch.load) and mapped to the available device (CPU or GPU).
+
 # Inference
 
 ### Some more examples
