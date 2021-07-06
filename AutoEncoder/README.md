@@ -200,6 +200,17 @@ The U-Net network is simple – it's composed of `Down` and `Up` with `DoubleCon
 
 # Training
 
+Before you begin, make sure to save the required data files for training. To do this, run the contents of [`ini_InChI.py`](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/ini_InChI.py).
+
+See [`Trainer_AE.py`](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/Trainer_AE.py).
+
+The parameters for the model (and training it) are in the **ini folder**, so you can easily check or modify them should you wish to.
+To obtain this parameters folder you can:
+* Download it directly from the github
+* Generate this folder with `python ini.py` in a python terminal (example: Anaconda Prompt Powershell)
+
+Note that we perform validation at the end of every training epoch.
+
 ### Loss Function
 
 We use **[`MSELoss`](https://pytorch.org/docs/master/generated/torch.nn.MSELoss.html#torch.nn.MSELoss)**. This emphasizes restoring color to the images and reconstructing the missing links.
