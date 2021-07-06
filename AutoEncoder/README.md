@@ -206,8 +206,10 @@ See [`Trainer_AE.py`](https://github.com/AntoinePlissonneau/MolecularTranslation
 
 The parameters for the model (and training it) are in the **ini folder**, so you can easily check or modify them should you wish to.
 To obtain this parameters folder you can:
-* Download it directly from the github
+* Download it directly from the GitHub
 * Generate this folder with `python ini.py` in a python terminal (example: Anaconda Prompt Powershell)
+
+It is possible to leave a parameter empty (e.g. checkpoint path if no checkpoint is used). Nevertheless, it is essential to have the **ini folder and the 3 files** that make it up for the proper functioning of the program. Moreover, it is necessary to have a folder named **checkpoint** at the same level, even if it is empty.
 
 Note that we perform validation at the end of every training epoch.
 
