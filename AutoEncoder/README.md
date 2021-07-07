@@ -225,6 +225,10 @@ Note that this checkpoint should be [loaded directly with PyTorch](https://pytor
 
 # Inference
 
+See `Predict` in [`Trainer_AE.py`](https://github.com/AntoinePlissonneau/MolecularTranslationChallenge/blob/main/AutoEncoder/Trainer_AE.py).
+
+To produce the result of a prediction, the method implemented in the Trainer class must be used. You can generate an image or generate a PyTorch tensor to reuse it in another process (here attention mechanism).
+
 ### Some more examples
 
 ---
